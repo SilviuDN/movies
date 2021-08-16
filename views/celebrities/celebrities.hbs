@@ -1,0 +1,34 @@
+<h2>Celebrities</h2>
+{{#if errorMessage}}
+<div style="margin: 20px 0; padding: 5px; color: white; background: red; text-align: center; font-size: 1.5em">
+    {{errorMessage}}</div>
+{{/if}}
+<div class="container">
+    <div class="row">
+        {{#each celebs}}
+        <div class="col col-4">
+
+            <div class="card mb-3">
+
+                        <img src="{{image}}" alt="" class="card-img-top">
+                        <div class="card-body">
+
+                            <h5 class="card-title">{{name}}</h5>
+                            <p class="card-text"><strong>Occupation: </strong> {{occupation}}</p>
+                            <p class="card-text">
+                                <span class="text-muted"><strong>Catchphrase: </strong>{{catchPhrase}}</span>                                
+                            </p>
+                        </div>
+            </div>              
+        </div> 
+        {{/each}}
+    </div>
+
+    <div class="mb-3">
+        <a class="btn btn-info" href="/celebrities/create">Create Celebrity</a>
+    </div>   
+
+    <div class="mb-3">
+        <a class="btn btn-info" href="/">Home</a>
+    </div>
+</div>

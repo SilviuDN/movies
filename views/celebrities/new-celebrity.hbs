@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="col col-6 offset-3">
+        <h2>New celeb:</h2>
+        {{#if errorMessage}}
+            <div style="margin: 20px 0; padding: 5px; color: white; background: red; text-align: center; font-size: 1.5em">
+                {{errorMessage}}
+            </div>
+
+        {{/if}}
+        <form action="/celebrities/create" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="image" class="form-label">image</label>
+                <input type="text" class="form-control" id="image" name="image">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="occupation" class="form-label">occupation</label>
+                <input type="text" class="form-control" id="occupation" name="occupation">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="catchPhrase" class="form-label">catchPhrase</label>
+                <input type="text" class="form-control" id="catchPhrase" name="catchPhrase">
+            </div>
+
+
+            <div class="mb-3">
+                <button class="btn btn-success">New Celebrity</button>
+            </div>
+
+        </form>
+
+        <div class="mb-3">
+            <a class="btn btn-info" href="/">Home</a>
+        </div>
+
+        <div class="mb-3">
+            <a class="btn btn-info" href="/celebrities">All Celebrities</a>
+        </div>        
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h1>Movies</h1>
+<a href="/movies/create" class="btn btn-info btn-lg">New Movie</a>
+
+
+<div class="container">
+    <div class="row">
+        {{#each movies}}
+        <div class="col col-4">
+
+        <div class="card mb-3">
+
+            <img src="{{image}}" alt="" class="card-img-top">
+            <div class="card-body">
+
+                <h5 class="card-title"><strong>{{title}}</strong></h5>
+
+                {{>movieCardDetailsButton}}
+            </div>
+
+        </div> 
+
+            
+        </div> 
+        {{/each}}
+    </div>
+</div>

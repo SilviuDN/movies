@@ -1,0 +1,52 @@
+    <div class="row">
+        <div class="col col-6 offset-3">
+            <h1>New Movie</h1>
+            {{#if errorMessage}}
+            <div
+                style="margin-top: 20px; padding: 5px; color: white; background: red; text-align: center; font-size: .95em">
+                {{errorMessage}}</div>
+            {{/if}}
+
+            <form action="/movies/create" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="genre">Genre</label>
+                <input class="form-control" type="text" id="genre" name="genre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image</label>
+                <input class="form-control" type="text" id="image" name="image">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="plot">Plot</label>
+                <textarea class="form-control" type="text" id="plot" name="plot"></textarea>
+            </div>
+
+
+            <div class="col-auto my-1">
+            <label class="mr-sm-2 sr-only" for="cast">Cast</label>
+            <p>Cast: <em class="text-muted">(press and hold Ctrl for multiple sellection...)</em></p>
+            
+            <select class="custom-select mr-sm-2" id="cast" name="cast" multiple>
+                {{#each celebrities}}
+                    <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+            </select>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-success">Add Movie</button>
+            </div>
+            
+        
+        </form>
+        <div class="mb-3">
+            <a class="btn btn-info" href="/movies">All Movies</a>
+        </div>
+
+
+    </div>
+</div>
